@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:newsapp/Api/News_Model.dart';
-import 'package:newsapp/Const/Constant.dart';
-import 'package:newsapp/Cubit/news_cubit.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newsapp/Screens/Shared_Card.dart';
+import 'package:newsapp/cubit/news_cubit.dart';
+import 'package:newsapp/screens/shared_card.dart';
+
+import '../api/news_model.dart';
+import '../constants/constant.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({super.key});

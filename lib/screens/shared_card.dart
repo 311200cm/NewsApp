@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Api/News_Model.dart';
-import 'package:newsapp/Const/Constant.dart';
+
 import 'package:url_launcher/url_launcher.dart';
+
+import '../api/news_model.dart';
+import '../constants/constant.dart';
 
 class SharedCard extends StatelessWidget {
   Articles articles;

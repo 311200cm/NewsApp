@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Cubit/news_cubit.dart';
-import 'package:newsapp/Screens/Result_Screen.dart';
-
+import 'package:newsapp/cubit/news_cubit.dart';
+import 'package:newsapp/screens/result_screen.dart';
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -62,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
         GestureDetector(
           onTap:() {
             var cubit =NewsCubit.get(context);
-            cubit.GetResultToSearch(controller.text);
+            cubit.getResultToSearch(controller.text);
             Navigator.push(context,
             MaterialPageRoute(builder: (_)=>ResultScreen(title: "General",))
             );

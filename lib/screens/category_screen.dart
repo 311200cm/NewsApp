@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Cubit/news_cubit.dart';
-import 'package:newsapp/Screens/Result_Screen.dart';
 
+import '../cubit/news_cubit.dart';
+
+import 'package:newsapp/screens/result_screen.dart';
 class CategoryScreen extends StatelessWidget {
    CategoryScreen({super.key});
   List<String>category=[
@@ -33,7 +34,7 @@ class CategoryScreen extends StatelessWidget {
           itemBuilder:(context,index){
             return GestureDetector(
               onTap:() {
-                var cubit=NewsCubit.get(context).GetResultData(category[index].toLowerCase());
+                var cubit=NewsCubit.get(context).getResultData(category[index].toLowerCase());
                 Navigator.push(context,
                   MaterialPageRoute(builder: (_)=>ResultScreen(title: category[index],))
                 );

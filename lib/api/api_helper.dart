@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-abstract class Dio_Helper{
+abstract class DioHelper{
 
  static Dio? _dio;
 
@@ -20,7 +20,7 @@ abstract class Dio_Helper{
    );
  }
 
- static Future<Response>GetAllData({
+ static Future<Response>getAllData({
    required String endPoint,
    required Map<String,dynamic> quaryParamter,
 })async{

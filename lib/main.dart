@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Api/API_Helper.dart';
-import 'package:newsapp/Cubit/news_cubit.dart';
-import 'package:newsapp/Screens/LayOut_Screen.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newsapp/api/api_helper.dart';
+import 'package:newsapp/cubit/news_cubit.dart';
+import 'package:newsapp/screens/lay_out_screen.dart';
 void main()async {
-  await Dio_Helper.Initilization();
+  await DioHelper.Initilization();
   runApp(const MyApp());
 }
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NewsCubit()..GetTopHeadLine(),
+      create: (context) => NewsCubit()..getTopHeadLine(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: LayoutScreen(),

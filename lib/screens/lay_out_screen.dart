@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Screens/Category_Screen.dart';
-import 'package:newsapp/Screens/Home_Screen.dart';
-import 'package:newsapp/Screens/Search_Screen.dart';
+
+import 'package:newsapp/screens/search_screen.dart';
+import 'category_screen.dart';
+import 'home_screen.dart';
+
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
@@ -12,7 +14,7 @@ class LayoutScreen extends StatefulWidget {
 
 class _LayoutScreenState extends State<LayoutScreen> {
 
-  List<Widget>Screen=[
+  List<Widget>screen=[
   HomeScreen(),
   CategoryScreen(),
   SearchScreen(),
@@ -35,7 +37,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
           //print(index);
         },
         scrollDirection: Axis.horizontal,
-          children:Screen
+          children:screen
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,

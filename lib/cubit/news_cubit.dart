@@ -1,11 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:newsapp/Api/API_Helper.dart';
-import 'package:newsapp/Api/End_Point.dart';
-import 'package:newsapp/Api/News_Model.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:newsapp/Const/Constant.dart';
+import 'package:newsapp/api/api_helper.dart';
+import 'package:newsapp/api/end_point.dart';
+
+import '../api/news_model.dart';
+import '../constants/constant.dart';
+
 part 'news_state.dart';
 
 class NewsCubit extends Cubit<NewsState> {
@@ -14,12 +17,12 @@ class NewsCubit extends Cubit<NewsState> {
   NewsModel? newsModel;
   NewsModel ? ResultData;
 
-void GetTopHeadLine()async{
+void getTopHeadLine()async{
   emit(GetTopHeadLineLoading());
 
   try{
-    Response response =await Dio_Helper.GetAllData(
-        endPoint: TOPHEADLINE, quaryParamter: {
+    Response response =await DioHelper.getAllData(
+        endPoint: topHeadLine, quaryParamter: {
           "apiKey":apiKey,
           "country":"us"
     });
@@ -40,11 +43,11 @@ void GetTopHeadLine()async{
   }
 }
 
-void GetResultData(String category)async{
+void getResultData(String category)async{
   emit(GetResultDataLoading());
   try{
-    Response res=await Dio_Helper.GetAllData(
-        endPoint:TOPHEADLINE,
+    Response res=await DioHelper.getAllData(
+        endPoint:topHeadLine,
         quaryParamter:{
           "apiKey":apiKey,
           "country":'us',
@@ -67,11 +70,11 @@ void GetResultData(String category)async{
     emit(GetResultDataError(message: "Internet Connection Failed"));
   }
 }
-void GetResultToSearch (String q)async{
+void getResultToSearch (String q)async{
 
   emit(GetResultDataLoading());
   try{
-    Response res= await Dio_Helper.GetAllData(endPoint:EVERYTHING,
+    Response res= await DioHelper.getAllData(endPoint:everyThing,
         quaryParamter:{
       "apiKey":apiKey,
       "q":q

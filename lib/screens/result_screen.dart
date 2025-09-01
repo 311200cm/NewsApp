@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newsapp/Cubit/news_cubit.dart';
-import 'package:newsapp/Screens/Shared_Card.dart';
-import 'package:newsapp/Screens/Shared_Card.dart';
+import 'package:newsapp/cubit/news_cubit.dart';
+import 'package:newsapp/screens/shared_card.dart';
 class ResultScreen extends StatelessWidget {
   String title;
    ResultScreen({super.key,required this.title});
