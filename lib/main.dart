@@ -5,7 +5,7 @@ import 'package:newsapp/api/api_helper.dart';
 import 'package:newsapp/cubit/news_cubit.dart';
 import 'package:newsapp/screens/lay_out_screen.dart';
 void main()async {
-  await DioHelper.Initilization();
+  await DioHelper.initilization();
   runApp(const MyApp());
 }
 
