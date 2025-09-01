@@ -4,7 +4,7 @@ abstract class DioHelper{
 
  static Dio? _dio;
 
- static Future<void>Initilization()async{
+ static Future<void>initilization()async{
 
    _dio=Dio(
      BaseOptions(
